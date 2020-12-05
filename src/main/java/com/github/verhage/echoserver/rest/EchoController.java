@@ -26,9 +26,7 @@ public class EchoController {
         Collections.list(request.getHeaderNames()).forEach(
                 header -> headers.put(header, request.getHeader(header))
         );
-
         InetAddress server = InetAddress.getLocalHost();
-
         return ResponseEntity.ok(Map.of(
                 "protocol", request.getProtocol(),
                 "method", request.getMethod(),
